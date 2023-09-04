@@ -13,9 +13,12 @@
 <body>
     <center>
         <?php
-        if(isset($_GET['flag'])){
-            if($_GET['flag']==3){
-                echo "<script>alert('Medication name doesn't exist')</script>";
+        if (isset($_GET['flag'])) {
+            if ($_GET['flag'] == 3 && isset($_GET['reservation_id'])) {
+                $reservation_id = $_GET['reservation_id'];
+                echo "Note Your reservation ID is: $reservation_id";
+            } elseif ($_GET['flag'] == 4) {
+                echo "Sorry, there was an issue with your reservation.";
             }
         }
         if (session_status() == PHP_SESSION_NONE) {

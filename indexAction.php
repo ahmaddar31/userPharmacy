@@ -85,6 +85,11 @@ if (isset($_SESSION['userlog_info'])) {
                                             <label for="quantity">Enter a quantity between 1 and 3:</label>
                                             <input type="number" id="quantity" name="quantity" min="1" max="3" step="1" oninput="validateInput(this)">
                                             <p id="errorText" style="color: red;"></p>
+                                            <label> Delivery?</label>
+                                            <input class="forDelivery" type="radio" name="yesNo" value="Yes" checked> Yes
+                                            <input class="forDelivery" type="radio" name="yesNo" value="No"> No
+
+
                                             <p class="price" id="price-<?php $cardCount ?>" name="price" style="display: none;"><?php echo $price; ?></p>
                                             <!-- Hidden input field to pass the price value to the process_reservation.php -->
                                             <input type="hidden" name="price" id="hiddenPrice" value="<?php echo $price; ?>">
